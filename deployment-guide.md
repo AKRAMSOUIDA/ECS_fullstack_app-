@@ -7,8 +7,8 @@
 - ✅ Applications tested and working
 
 ## ECR Image URIs
-- **API**: `391965905745.dkr.ecr.us-east-1.amazonaws.com/nodejs-api:latest`
-- **Frontend**: `391965905745.dkr.ecr.us-east-1.amazonaws.com/nextjs-frontend:latest`
+- **API**: `<account-id>.dkr.ecr.<region>.amazonaws.com/nodejs-api:latest`
+- **Frontend**: `<account-id>.dkr.ecr.<region>.amazonaws.com/nextjs-frontend:latest`
 
 ## Local Testing
 Your applications are currently running locally:
@@ -40,11 +40,11 @@ aws ecs register-task-definition --region us-east-1 --cli-input-json '{
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "512",
   "memory": "1024",
-  "executionRoleArn": "arn:aws:iam::391965905745:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::<account-id>:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "name": "nodejs-api",
-      "image": "391965905745.dkr.ecr.us-east-1.amazonaws.com/nodejs-api:latest",
+      "image": "<account-id>.dkr.ecr.us-east-1.amazonaws.com/nodejs-api:latest",
       "portMappings": [
         {
           "containerPort": 3001,
@@ -73,11 +73,11 @@ aws ecs register-task-definition --region us-east-1 --cli-input-json '{
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "512",
   "memory": "1024",
-  "executionRoleArn": "arn:aws:iam::391965905745:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::<account-id>:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "name": "nextjs-frontend",
-      "image": "391965905745.dkr.ecr.us-east-1.amazonaws.com/nextjs-frontend:latest",
+      "image": "<account-id>.dkr.ecr.us-east-1.amazonaws.com/nextjs-frontend:latest",
       "portMappings": [
         {
           "containerPort": 3000,
@@ -114,7 +114,7 @@ aws apprunner create-service --region us-east-1 --cli-input-json '{
   "ServiceName": "nodejs-api-service",
   "SourceConfiguration": {
     "ImageRepository": {
-      "ImageIdentifier": "391965905745.dkr.ecr.us-east-1.amazonaws.com/nodejs-api:latest",
+      "ImageIdentifier": "<account-id>.dkr.ecr.us-east-1.amazonaws.com/nodejs-api:latest",
       "ImageConfiguration": {
         "Port": "3001"
       },
