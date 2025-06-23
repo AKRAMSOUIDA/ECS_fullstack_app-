@@ -25,7 +25,17 @@ export default function Home() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Add visual feedback
+    const submitButton = e.target.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Adding...';
+    submitButton.disabled = true;
+    
     try {
+      console.log('Submitting user:', newUser);
+      console.log('API URL:', `${API_URL}/api/users`);
+      
       const response = await fetch(`${API_URL}/api/users`, {
         method: 'POST',
         headers: {
@@ -33,11 +43,29 @@ export default function Home() {
         },
         body: JSON.stringify(newUser),
       });
+      
+      console.log('Response status:', response.status);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
       const user = await response.json();
+      console.log('New user created:', user);
+      
       setUsers([...users, user]);
       setNewUser({ name: '', email: '' });
+      
+      // Show success message
+      alert('User added successfully!');
+      
     } catch (error) {
       console.error('Error creating user:', error);
+      alert(`Error adding user: ${error.message}`);
+    } finally {
+      // Reset button
+      submitButton.textContent = originalText;
+      submitButton.disabled = false;
     }
   };
 

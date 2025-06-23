@@ -1,0 +1,93 @@
+# =============================================================================
+# Terraform Variables Configuration Example
+# Copy this file to terraform.tfvars and customize the values
+# =============================================================================
+
+# =============================================================================
+# General Configuration
+# =============================================================================
+
+aws_region   = "us-east-1"
+project_name = "fullstack-app"
+environment  = "dev"
+
+# =============================================================================
+# ECS Configuration
+# =============================================================================
+
+# API Configuration
+api_cpu           = 512
+api_memory        = 1024
+api_desired_count = 2
+api_image_tag     = "latest"
+
+# Frontend Configuration
+frontend_cpu           = 512
+frontend_memory        = 1024
+frontend_desired_count = 2
+frontend_image_tag     = "latest"
+
+# =============================================================================
+# Load Balancer Configuration
+# =============================================================================
+
+enable_deletion_protection       = false
+enable_cross_zone_load_balancing = true
+idle_timeout                     = 60
+
+# =============================================================================
+# Security Configuration
+# =============================================================================
+
+allowed_cidr_blocks = ["0.0.0.0/0"]
+enable_waf         = false
+
+# =============================================================================
+# Monitoring Configuration
+# =============================================================================
+
+log_retention_days        = 7
+enable_container_insights = true
+
+# =============================================================================
+# Auto Scaling Configuration
+# =============================================================================
+
+enable_auto_scaling = true
+
+# API Auto Scaling
+api_min_capacity = 1
+api_max_capacity = 10
+
+# Frontend Auto Scaling
+frontend_min_capacity = 1
+frontend_max_capacity = 10
+
+# Scaling Targets
+cpu_target_value    = 70
+memory_target_value = 80
+
+# =============================================================================
+# Feature Flags
+# =============================================================================
+
+enable_https_redirect            = true
+enable_sticky_sessions          = false
+enable_cross_zone_load_balancing = true
+
+# =============================================================================
+# Development Configuration
+# =============================================================================
+
+enable_debug_mode = false
+enable_hot_reload = false
+
+# =============================================================================
+# Additional Tags
+# =============================================================================
+
+additional_tags = {
+  Owner       = "DevOps Team"
+  CostCenter  = "Engineering"
+  Application = "Fullstack Demo"
+}
