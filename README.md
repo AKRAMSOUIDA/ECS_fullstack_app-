@@ -9,6 +9,7 @@ A full-stack application demonstrating deployment of Node.js API and Next.js fro
 - **Containerization**: Docker containers for both applications
 - **Deployment**: AWS ECS with ECR for container registry
 - **Load Balancing**: Application Load Balancer for high availability
+- **Security**: SSL/HTTPS encryption with automatic HTTP redirect
 
 ## 📁 Project Structure
 
@@ -80,9 +81,9 @@ npm run dev
 
 ## 🌐 AWS Deployment
 
-### Current ECR Images
-- **API**: `391965905745.dkr.ecr.us-east-1.amazonaws.com/nodejs-api:latest`
-- **Frontend**: `391965905745.dkr.ecr.us-east-1.amazonaws.com/nextjs-frontend:latest`
+### ECR Container Registry
+- **API**: `<account-id>.dkr.ecr.<region>.amazonaws.com/nodejs-api:latest`
+- **Frontend**: `<account-id>.dkr.ecr.<region>.amazonaws.com/nextjs-frontend:latest`
 
 ### Deployment Options
 
@@ -140,6 +141,8 @@ See `deployment-guide.md` for detailed instructions.
 - **Non-root Containers**: Enhanced security
 - **Environment Variables**: Secure configuration management
 - **VPC Networking**: Isolated network environment
+- **SSL/HTTPS**: End-to-end encryption
+- **HTTP to HTTPS Redirect**: Automatic secure connections
 
 ## 🚦 API Endpoints
 
@@ -165,6 +168,8 @@ Response: {"id": 123456789, "name": "New User", "email": "user@example.com"}
 - **Next.js Optimization**: Static generation and code splitting
 - **Caching**: Efficient Docker layer caching
 - **Resource Limits**: Proper CPU and memory allocation
+- **Load Balancing**: Application Load Balancer with health checks
+- **HTTP/2**: Modern protocol support with SSL/HTTPS
 
 ## 📈 Scaling Considerations
 
@@ -188,6 +193,7 @@ Response: {"id": 123456789, "name": "New User", "email": "user@example.com"}
 - **Frontend**: Next.js, React
 - **Containerization**: Docker, Docker Compose
 - **Cloud**: AWS ECS, ECR, ALB
+- **Security**: SSL/HTTPS, ACM certificates
 - **Monitoring**: CloudWatch, Health Checks
 
 ## 🤝 Contributing
