@@ -1,4 +1,4 @@
-# 🏗️ AWS MCP Fullstack Application - Terraform Infrastructure
+# 🏗️ Fullstack Application - Terraform Infrastructure
 
 This directory contains Terraform code to provision a complete AWS infrastructure for the fullstack Node.js and Next.js application with ECS, ALB, SSL/HTTPS, and auto-scaling capabilities.
 
