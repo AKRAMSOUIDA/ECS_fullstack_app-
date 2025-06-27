@@ -1,4 +1,4 @@
-# AWS MCP Project - Node.js & Next.js on ECS
+# Fullstack app blueprint - Node.js & Next.js on ECS
 
 A full-stack application demonstrating deployment of Node.js API and Next.js frontend on AWS ECS using containerization.
 
@@ -87,21 +87,12 @@ npm run dev
 
 ### Deployment Options
 
-#### 1. AWS ECS (Recommended)
+#### 1. AWS ECS 
 - Full container orchestration
 - Auto-scaling capabilities
 - Load balancer integration
 - Production-grade monitoring
 
-#### 2. AWS App Runner
-- Simplified deployment
-- Automatic scaling
-- Built-in load balancing
-
-#### 3. AWS Lambda (Serverless)
-- Pay-per-request pricing
-- Automatic scaling
-- No server management
 
 See `deployment-guide.md` for detailed instructions.
 
@@ -178,14 +169,6 @@ Response: {"id": 123456789, "name": "New User", "email": "user@example.com"}
 - **Auto Scaling**: Based on CPU/memory metrics
 - **Database**: Consider RDS for persistent data
 
-## 🛡️ Production Checklist
-
-- [ ] Environment variables configured
-- [ ] HTTPS/SSL certificates
-- [ ] Database connections secured
-- [ ] Monitoring and alerting setup
-- [ ] Backup and disaster recovery
-- [ ] CI/CD pipeline configured
 
 ## 📚 Technologies Used
 
@@ -204,10 +187,4 @@ Response: {"id": 123456789, "name": "New User", "email": "user@example.com"}
 4. Test locally with Docker Compose
 5. Submit a pull request
 
-## 📄 License
 
-This project is part of the AWS MCP (Model Context Protocol) demonstration series.
-
----
-
-**Built with ❤️ using AWS MCP Server tools for seamless cloud deployment**
